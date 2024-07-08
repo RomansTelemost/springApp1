@@ -7,12 +7,24 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
     <!--    <context:annotation-config/>-->
     <!--    <context:component-scan base-package="com.baeldung.applicationcontext"/>-->
 
     <bean id="musicPlayer"
           class="ru.rom.springcource.MusicPlayer">
-        <constructor-arg ref="rockMusic"/>
+        <property name="musicList">
+            <list>
+                <ref bean="classicalMusic"/>
+                <ref bean="rockMusic"/>
+                <ref bean="popMusic"/>
+            </list>
+        </property>
+
+
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
     <bean id="classicalMusic"
@@ -20,6 +32,9 @@
     </bean>
     <bean id="rockMusic"
           class="ru.rom.springcource.RockMusic">
+    </bean>
+    <bean id="popMusic"
+          class="ru.rom.springcource.PopMusic">
     </bean>
 
 </beans>
