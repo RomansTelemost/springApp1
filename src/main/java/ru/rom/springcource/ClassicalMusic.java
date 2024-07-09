@@ -2,6 +2,8 @@ package ru.rom.springcource;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,16 @@ import java.util.List;
 public class ClassicalMusic implements Music {
 
     private List<String> songs = new ArrayList<>();
+
+    @PostConstruct
+    public void doMyInit() {
+        System.out.println("ClassicalMusic doMyInit");
+    }
+
+    @PreDestroy
+    public void doMyDestroy() {
+        System.out.println("ClassicalMusic doMyDestroy");
+    }
 
     public ClassicalMusic() {
         songs.add("class s 1");
