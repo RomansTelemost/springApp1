@@ -7,9 +7,6 @@ import java.util.List;
 //@Component
 public class MusicPlayer {
 
-    private ClassicalMusic classicalMusic;
-    private RockMusic rockMusic;
-
     private List<Music> musicList;
 
     @Value("${musicPlayer.name}")
@@ -17,16 +14,6 @@ public class MusicPlayer {
 
     @Value("${musicPlayer.volume}")
     private int volume;
-
-//    public MusicPlayer() {
-//    }
-
-//    @Autowired
-//    public MusicPlayer(ClassicalMusic music1, RockMusic music2) {
-//        this.classicalMusic = music1;
-//        this.rockMusic = music2;
-//    }
-
 
     public MusicPlayer(List<Music> musicList) {
         this.musicList = musicList;
