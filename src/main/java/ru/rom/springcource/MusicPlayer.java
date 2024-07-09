@@ -8,6 +8,14 @@ public class MusicPlayer {
     private String name;
     private int volume;
 
+    private void initMethod() {
+        System.out.println("init");
+    }
+
+    public void destroyMethod() {
+        System.out.println("dead");
+    }
+
     public MusicPlayer() {
     }
 
@@ -36,7 +44,7 @@ public class MusicPlayer {
     }
 
     public void playMusic() {
-        for (Music music: musicList) {
+        for (Music music : musicList) {
             System.out.println("Playing: " + music.getSong());
         }
     }
