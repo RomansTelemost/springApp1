@@ -1,20 +1,15 @@
 package ru.rom.springcource;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class MusicPlayer {
     private List<Music> musicList = new ArrayList<>();
     private String name;
     private int volume;
-
-    private void initMethod() {
-        System.out.println("init");
-    }
-
-    public void destroyMethod() {
-        System.out.println("dead");
-    }
 
     public MusicPlayer() {
     }

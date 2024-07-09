@@ -8,39 +8,6 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
-
-    <!--    <context:annotation-config/>-->
-    <!--    <context:component-scan base-package="com.baeldung.applicationcontext"/>-->
-
-    <bean id="musicPlayer"
-          class="ru.rom.springcource.MusicPlayer"
-          scope="prototype"
-          init-method="initMethod"
-          destroy-method="destroyMethod">
-
-        <property name="musicList">
-            <list>
-                <ref bean="classicalMusic"/>
-                <ref bean="rockMusic"/>
-                <ref bean="popMusic"/>
-            </list>
-        </property>
-
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
-
-    <bean id="classicalMusic"
-          class="ru.rom.springcource.ClassicalMusic"
-          scope="prototype"
-          init-method="initMethod"
-    factory-method="fabricMethod">
-    </bean>
-    <bean id="rockMusic"
-          class="ru.rom.springcource.RockMusic">
-    </bean>
-    <bean id="popMusic"
-          class="ru.rom.springcource.PopMusic">
-    </bean>
+    <context:component-scan base-package="ru.rom.springcource"/>
 
 </beans>
