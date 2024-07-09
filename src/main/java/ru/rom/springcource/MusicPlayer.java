@@ -1,14 +1,13 @@
 package ru.rom.springcource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MusicPlayer {
 
-    private Music music1;
-    private Music music2;
+    private ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
     private String name;
     private int volume;
 
@@ -16,17 +15,9 @@ public class MusicPlayer {
     }
 
     @Autowired
-    public MusicPlayer(@Qualifier("rockMusic") Music music1, @Qualifier("classMusicBean") Music music2) {
-        this.music1 = music1;
-        this.music2 = music2;
-    }
-
-    public Music getMusic1() {
-        return music1;
-    }
-
-    public void setMusic1(Music music1) {
-        this.music1 = music1;
+    public MusicPlayer(ClassicalMusic music1, RockMusic music2) {
+        this.classicalMusic = music1;
+        this.rockMusic = music2;
     }
 
     public String getName() {
@@ -45,8 +36,19 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    public void playMusic() {
-        System.out.println("Playing 1: " + music1.getSong());
-        System.out.println("Playing 2: " + music2.getSong());
+    public void playMusic(Genre genre) {
+        if (Genre.CLASSICAL.equals(genre)) {
+            System.out.println(
+                    classicalMusic.getSongs().get(
+                            (int)Math.round(Math.random()*2)
+                    )
+            );
+            return;
+        }
+        System.out.println(
+                rockMusic.getSongs().get(
+                        (int)Math.round(Math.random()*2)
+                )
+        );
     }
 }
