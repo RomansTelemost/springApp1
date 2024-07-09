@@ -1,11 +1,9 @@
-package ru.rom.springcource;
-
-import org.springframework.stereotype.Component;
+package ru.rom.springcourse;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+//@Component
 public class RockMusic implements Music {
 
     private List<String> songs = new ArrayList<>();

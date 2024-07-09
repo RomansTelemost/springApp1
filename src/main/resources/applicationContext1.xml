@@ -10,7 +10,7 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicPlayer"
-          class="ru.rom.springcource.MusicPlayer"
+          class="ru.rom.springcourse.MusicPlayer"
           scope="prototype"
           init-method="initMethod"
           destroy-method="destroyMethod">
@@ -28,16 +28,16 @@
     </bean>
 
     <bean id="classicalMusic"
-          class="ru.rom.springcource.ClassicalMusic"
+          class="ru.rom.springcourse.ClassicalMusic"
           scope="prototype"
           init-method="initMethod"
     factory-method="fabricMethod">
     </bean>
     <bean id="rockMusic"
-          class="ru.rom.springcource.RockMusic">
+          class="ru.rom.springcourse.RockMusic">
     </bean>
     <bean id="popMusic"
-          class="ru.rom.springcource.PopMusic">
+          class="ru.rom.springcourse.PopMusic">
     </bean>
 
 </beans>

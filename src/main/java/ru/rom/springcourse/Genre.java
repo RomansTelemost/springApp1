@@ -1,4 +1,4 @@
-package ru.rom.springcource;
+package ru.rom.springcourse;
 
 public enum Genre {
     CLASSICAL,

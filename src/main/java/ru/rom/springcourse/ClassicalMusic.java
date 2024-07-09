@@ -1,13 +1,11 @@
-package ru.rom.springcource;
-
-import org.springframework.stereotype.Component;
+package ru.rom.springcourse;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("classicalMusicBean")
+//@Component("classicalMusicBean")
 public class ClassicalMusic implements Music {
 
     private List<String> songs = new ArrayList<>();
